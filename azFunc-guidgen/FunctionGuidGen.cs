@@ -10,6 +10,13 @@ using Newtonsoft.Json;
 
 namespace azFunc_guidgen
 {
+    public partial class GuidGenResponse
+    {
+        [JsonProperty("guid")]
+        public Guid Guid { get; set; }
+        [JsonProperty("creationTime")]
+        public DateTime CreationTime { get; internal set; }
+    }
     public static class FunctionGuidGen
     {
         [FunctionName("GuidGen")]
@@ -19,7 +26,12 @@ namespace azFunc_guidgen
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
             string responseMessage = Guid.NewGuid().ToString();
-            return new OkObjectResult(responseMessage);
+            var response = new GuidGenResponse
+            {
+                Guid = Guid.NewGuid(),
+                CreationTime = DateTime.UtcNow
+            };
+            return new OkObjectResult(response);
         }
     }
 }
