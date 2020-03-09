@@ -6,10 +6,19 @@ cd bash
 ```
 This will setup a resource group simply to do terraform state management for the project
 
+
+```bash
+cd az-setup/terraform/002.main-infrastructure/
+terraform init
+terraform plan -target=azurerm_function_app.main -out=tf.plan
+terraform apply tf.plan 
+```
+The azure function needs to be created first so that its id is known before we can assign roles via managed identity.
+So its a 2 step terraform process.
+
 ```bash
 cd terraform
-export ARM_ACCESS_KEY=$(az keyvault secret show --name terraform-backend-key --vault-name kv-tf-githubaction --query value -o tsv)  
 terraform init
-terraform plan -out=tf.plan
-terraform apply tf.plan
+terraform plan -out=tf.plan    
+terraform apply tf.plan 
 ```
