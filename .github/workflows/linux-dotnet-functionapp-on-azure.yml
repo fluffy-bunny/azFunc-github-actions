@@ -36,6 +36,7 @@ jobs:
       shell: bash
       run: |
         pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
+        ls
         dotnet build --configuration Release --output ./output azFunc-guidgen.sln
         popd
 
