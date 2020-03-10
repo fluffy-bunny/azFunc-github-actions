@@ -32,12 +32,19 @@ jobs:
       with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
 
-    - name: 'Resolve Project Dependencies Using Dotnet'
+    - name: 'Resolve Project Dependencies Using Dotnet and I guess build it?'
       shell: bash
       run: |
         pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
         ls
         dotnet build --configuration Release --output ./output azFunc-guidgen.sln
+        popd
+
+    - name: 'Test'
+      shell: bash
+      run: |
+        pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
+        dotnet test azFunc-guidgen.sln
         popd
 
     - name: 'Run Azure Functions Action'
