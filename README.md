@@ -1,5 +1,13 @@
 # azFunc-github-actions
 
+## References
+[azure-functions-action](https://github.com/marketplace/actions/azure-functions-action)  
+This project uses [linux-dotnet-functionapp-on-azure.yml](https://github.com/Azure/actions-workflow-samples/blob/master/FunctionApp/linux-dotnet-functionapp-on-azure.yml)  
+
+
+
+
+
 ```bash
 cd bash
 ./000.step-one-setup-terraform.sh
