@@ -7,4 +7,4 @@ This project uses [linux-dotnet-functionapp-on-azure.yml](https://github.com/Azu
 ## Prerequisite
 The following project terraforms the needed resources in azure so that this project can simply publish to the azFunction.  
 [terraform-setup-azfunc-guidgen](https://github.com/fluffy-bunny/terraform-setup-azfunc-guidgen)  
-
+ 
