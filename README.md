@@ -1,6 +1,6 @@
 ![fluffy-bunny-banner](https://raw.githubusercontent.com/fluffy-bunny/static-assets/master/fluffy-bunny-banner.png)  
 
-# azFunc-github-actions
+# azFunc-guidgen
 
 ## References
 [azure-functions-action](https://github.com/marketplace/actions/azure-functions-action)  
